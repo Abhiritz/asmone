@@ -11,12 +11,12 @@ const successCases = [
     },
     {
         id: 1,
-        input: {i:' 1;_\\/    **2/3*4, _5,6,7\n8"9\'10_1005_2024/9999999'},
+        input: {i:' 1;_\\/*2/3*4, _5,6,7\n8"/9\'10_1005_2024/9999999'},
         output: 55
     },
 ];
 
-describe('asm seven, can take delimiters of any length between numbers',() => {
+describe('asm eight, can take multiple delimiters between numbers',() => {
     it.each(successCases)("test case $id input: $input output: $output",({input,output})=>{
         const {i} = input;
         expect(add(i)).toBe(output)
