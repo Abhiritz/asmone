@@ -35,12 +35,22 @@ const successCases = [
     },
     {
         id: 5,
-        input: {i:' 1;2/3*4 5-6,7\n8"9\'10'},
+        input: {i:' 1;2/3*4 5_6,7\n8"9\'10'},
         output: 55
+    },
+    {
+        id: 6,
+        input: {i:' 1;2/3*4, -5,6_7\n8"9\'10'},
+        output: Error
+    },
+    {
+        id: 7,
+        input: {i:' 1;2/3*4, -5,-6,7\n8"9\'10_-7/-8'},
+        output: Error
     },
 ];
 
-describe('asm four, can take different types of delimiters between numbers ',() => {
+describe('asm five, negative numbers throw exception as mentioned',() => {
     it.each(successCases)("test case $id input: $input output: $output",({input,output})=>{
         const {i} = input;
         expect(add(i)).toBe(output)
