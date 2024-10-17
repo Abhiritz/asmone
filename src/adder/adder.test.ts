@@ -28,9 +28,14 @@ const successCases = [
         input: {i:'1,2,3,6666,8,9,0,1,5,8,9,3,555,09,79,80'},
         output: 7438
     },
+    {
+        id: 4,
+        input: {i:'2,4\n34'},
+        output: 40
+    },
 ];
 
-describe('asm two, can take any number of inputs ',() => {
+describe('asm three, can take new line between numbers, instead of commas ',() => {
     it.each(successCases)("test case $id input: $input output: $output",({input,output})=>{
         const {i} = input;
         expect(add(i)).toBe(output)
