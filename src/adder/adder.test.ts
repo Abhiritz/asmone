@@ -18,9 +18,19 @@ const successCases = [
         input: {i:'1'},
         output: 1
     },
+    {
+        id: 3,
+        input: {i:''},
+        output: 0
+    },
+    {
+        id: 3,
+        input: {i:'1,2,3,6666,8,9,0,1,5,8,9,3,555,09,79,80'},
+        output: 7438
+    },
 ];
 
-describe('asm one ',() => {
+describe('asm two, can take any number of inputs ',() => {
     it.each(successCases)("test case $id input: $input output: $output",({input,output})=>{
         const {i} = input;
         expect(add(i)).toBe(output)
